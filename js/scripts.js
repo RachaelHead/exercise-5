@@ -54,6 +54,8 @@ var html ='';
 //get the empty table content area
 var tableContent = document.getElementById('table-content');
 
+
+
 //Write your function here
 function buildTable(){
   //start with the table header
@@ -65,7 +67,7 @@ function buildTable(){
 
   for (i=0; i< players.length; i++){
     html += '<tr>';
-    for( var j = 0; j < players.length; j++ ){
+    for( var j = 0; j< 1; j++ ){
        html += '<td>' + players[i].first +'</td><td>' + players[i].last +'</td><td>'
          + players[i].position +'</td><td>' + players[i].year+'</td>';
     }
