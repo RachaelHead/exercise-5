@@ -55,7 +55,7 @@ var html ='';
 var tableContent = document.getElementById('table-content');
 
 //Write your function here
-function buildTable(players){
+function buildTable(){
   //start with the table header
   html += '<tr><th>First</th><th>Last</th><th>Position</th><th>Year</th></tr>';
 
@@ -64,25 +64,30 @@ function buildTable(players){
   Write the loop here*/
 
   for (i=0; i< players.length; i++){
-    if (players[i].year == senoir){
+    html += '<tr>';
+    for( var j = 0; j < players[i].length; j++ ){
+
+       html += '<td>' + players[i].first +'</td><td>' + players[i].first +'</td><td>'
+         + players[i].first +'</td><td>' + players[i].first +'</td>';
+    }
+    html += '</tr>';
+
+    if (players[i].year == 'Senior'){
       tableContent.style.fontWeight = "900";
     }
   /*Now, outside of the for loop, but still inside the entire buildTable function,
   use the tableContent and html variables to display the results in the empty tableArea */
-  for (var i = 0; i < players.length; i++){
-      html += '<tr>';
-      for( var j = 0; j < players[i].length; j++ ){
+tableContent.innerHTML = html;
+  }
 
-         html += '<td>' + players[i].first +'</td><td>' + players[i].first +'</td><td>'
-           + players[i].first +'</td><td>' + players[i].first +'</td>';
-      }
-      html += '</tr>';
-      }
+}
+
+  buildTable();
 
 
 /*
 EXTRA CREDIT CHALLENGE (5 POINTS): Write a function that compares the list above with the list below, finds the players that made the All-State team, and displays a message with the results: "Congratulations to Springfield's 2018 North Carolina All-State honorees: ____." Display the message in a div below the table.
-Hint: You need two loops, one of which will be 'nested'.*/
+Hint: You need two loops, one of which will be 'nested'.
 var allStars = [
   {
     first:'Melanie',
@@ -126,4 +131,4 @@ var allStars = [
   position: 'Forward',
   school: 'Springfield High School'
   }
-];
+];*/
