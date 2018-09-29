@@ -47,7 +47,38 @@ var players = [
   year: 'Junior'
   }
 ];
+
+//Variables
+//initialize a variable for the HTML content your going to build
+var html ='';
+//get the empty table content area
+var tableContent = document.getElementById('table-content');
+
 //Write your function here
+function buildTable(players){
+  //start with the table header
+  html += '<tr><th>First</th><th>Last</th><th>Position</th><th>Year</th></tr>';
+
+  /*Now write a for loop to populate the table using the data
+  /include logic to make the text bold when the player is a senior.
+  Write the loop here*/
+
+  for (i=0; i< players.length; i++){
+    if (players[i].year == senoir){
+      tableContent.style.fontWeight = "900";
+    }
+  /*Now, outside of the for loop, but still inside the entire buildTable function,
+  use the tableContent and html variables to display the results in the empty tableArea */
+  for (var i = 0; i < players.length; i++){
+      html += '<tr>';
+      for( var j = 0; j < players[i].length; j++ ){
+
+         html += '<td>' + players[i].first +'</td><td>' + players[i].first +'</td><td>'
+           + players[i].first +'</td><td>' + players[i].first +'</td>';
+      }
+      html += '</tr>';
+      }
+
 
 /*
 EXTRA CREDIT CHALLENGE (5 POINTS): Write a function that compares the list above with the list below, finds the players that made the All-State team, and displays a message with the results: "Congratulations to Springfield's 2018 North Carolina All-State honorees: ____." Display the message in a div below the table.
