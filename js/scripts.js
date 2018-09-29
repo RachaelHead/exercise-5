@@ -65,10 +65,9 @@ function buildTable(){
 
   for (i=0; i< players.length; i++){
     html += '<tr>';
-    for( var j = 0; j < players[i].length; j++ ){
-
-       html += '<td>' + players[i].first +'</td><td>' + players[i].first +'</td><td>'
-         + players[i].first +'</td><td>' + players[i].first +'</td>';
+    for( var j = 0; j < players.length; j++ ){
+       html += '<td>' + players[i].first +'</td><td>' + players[i].last +'</td><td>'
+         + players[i].position +'</td><td>' + players[i].year+'</td>';
     }
     html += '</tr>';
 
