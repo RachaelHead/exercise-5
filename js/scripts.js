@@ -68,21 +68,33 @@ function buildTable(){
     for( var j = 0; j< 1; j++ ){
        html += '<td>' + players[i].first +'</td><td>' + players[i].last +'</td><td>'
          + players[i].position +'</td><td>' + players[i].year+'</td>';
+
+      if (players[i].year == 'Senior'){
+           row.style.fontWeight = "900";
+         };
     }
     html += '</tr>';
-
-    if (players[i].year === 'Senior'){
-      row.style.fontWeight = "900";
-    }
+  }
   /*Now, outside of the for loop, but still inside the entire buildTable function,
   use the tableContent and html variables to display the results in the empty tableArea */
 tableContent.innerHTML = html;
-  }
-
 }
 
   buildTable();
 
+
+var msg = '';
+var messageArea = document.getElementById('message-area');
+
+function allStarMessage(){
+  msg += "Congratulations to Springfield's 2018 North Carolina All-State honorees: ____."
+  for (i=0; i< allStars.length; i++){
+    if (allStars[i].school == 'Springfield High School'){
+      console.log(allStars[i].first + ' ' + allStars[i].last)
+    }
+  }
+  messageArea.innerHTML = msg;
+}
 
 /*
 EXTRA CREDIT CHALLENGE (5 POINTS): Write a function that compares the list above with the list below, finds the players that made the All-State team, and displays a message with the results: "Congratulations to Springfield's 2018 North Carolina All-State honorees: ____." Display the message in a div below the table.
