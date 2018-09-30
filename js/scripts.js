@@ -54,8 +54,6 @@ var html ='';
 //get the empty table content area
 var tableContent = document.getElementById('table-content');
 
-
-
 //Write your function here
 function buildTable(){
   //start with the table header
@@ -66,15 +64,15 @@ function buildTable(){
   Write the loop here*/
 
   for (i=0; i< players.length; i++){
-    html += '<tr>';
+    var row= document.createElement("tr");
     for( var j = 0; j< 1; j++ ){
        html += '<td>' + players[i].first +'</td><td>' + players[i].last +'</td><td>'
          + players[i].position +'</td><td>' + players[i].year+'</td>';
     }
     html += '</tr>';
 
-    if (players[i].year == 'Senior'){
-      tableContent.style.fontWeight = "900";
+    if (players[i].year === 'Senior'){
+      row.style.fontWeight = "900";
     }
   /*Now, outside of the for loop, but still inside the entire buildTable function,
   use the tableContent and html variables to display the results in the empty tableArea */
