@@ -70,7 +70,7 @@ function buildTable(){
          + players[i].position +'</td><td>' + players[i].year+'</td>';
 
       if (players[i].year == 'Senior'){
-           row.setAttribute = 'style","fontWeight: 900;"';
+           row += '<b>' + html + '</b>';
          };
     }
     html += '</tr>';
