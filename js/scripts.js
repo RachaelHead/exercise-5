@@ -65,14 +65,16 @@ function buildTable(){
 
   for (i=0; i< players.length; i++){
     var row= document.createElement("tr");
+    if (players[i].year == 'Senior'){
+         html += '<b>';
+       };
     for( var j = 0; j< 1; j++ ){
        html += '<td>' + players[i].first +'</td><td>' + players[i].last +'</td><td>'
          + players[i].position +'</td><td>' + players[i].year+'</td>';
-
-      if (players[i].year == 'Senior'){
-           row += '<b>' + html + '</b>';
-         };
     }
+    if (players[i].year == 'Senior'){
+         html += '</b>';
+       };
     html += '</tr>';
   }
   /*Now, outside of the for loop, but still inside the entire buildTable function,
